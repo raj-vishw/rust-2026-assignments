@@ -1,0 +1,5 @@
+[package]
+name = "run_length_encode"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true

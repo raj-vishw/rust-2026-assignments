@@ -1,0 +1,5 @@
+[package]
+name = "char_frequency"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true

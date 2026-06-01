@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-run-length-encode",
+    "02-longest-word",
+    "03-reverse-words",
+    "04-censor-vowels",
+    "05-char-frequency",
+    "06-caesar",
+    "07-min-max",
+    "08-split-and-double",
+    "09-inventory",
+    "10-group-anagrams",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+publish = false

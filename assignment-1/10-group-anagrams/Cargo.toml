@@ -1,0 +1,5 @@
+[package]
+name = "group_anagrams"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
