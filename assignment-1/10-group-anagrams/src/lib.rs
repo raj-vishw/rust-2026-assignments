@@ -1,6 +1,28 @@
+use std::collections::HashMap;
+
 pub fn group_anagrams(words: &[String]) -> Vec<Vec<String>> {
-    let _ = words;
-    todo!("implement group_anagrams")
+    let mut map: HashMap<String, Vec<String>> = HashMap::new();
+    let mut group_keys = Vec::new();
+    
+    for word in words {
+        let mut signature_bytes = word.to_ascii_lowercase().into_bytes();
+        signature_bytes.sort_unstable();
+        let signature = String::from_utf8(signature_bytes).unwrap();
+        
+        let entry = map.entry(signature.clone());
+        if let std::collections::hash_map::Entry::Vacant(_) = entry {
+            group_keys.push(signature);
+        }
+        entry.or_insert(Vec::new()).push(word.clone());
+    }
+    
+    let mut result = Vec::with_capacity(group_keys.len());
+    for key in group_keys {
+        if let Some(group) = map.remove(&key) {
+            result.push(group);
+        }
+    }
+    result
 }
 
 #[cfg(test)]
